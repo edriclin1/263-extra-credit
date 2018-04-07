@@ -7,7 +7,7 @@
  * Program to use dynamic programming to solve a
  * specific knapsack problem. There are 6 items
  * with weights {15, 25, 45, 30, 23, 37} and
- * values 100, 350, 225, 67, 275, 165}. 
+ * values 100, 350, 225, 67, 275, 168}. 
  *
  * @author Edric Lin
  * @author Hai Duong
@@ -27,7 +27,7 @@
  * @param item_values the values of the items
  * @return the value with the current conditions
  **************************************************/
-int value (int num_items, int weight_limit, int (&knapsack_values)[7][46], int (&item_weights)[7], int (&item_values)[7]);
+int value (int num_items, int weight_limit, int (&knapsack_values)[7][51], int (&item_weights)[7], int (&item_values)[7]);
 
 /**************************************************
  * Main method to run the program.
@@ -41,16 +41,16 @@ int main (int argc, char** argv) {
 	int max_items = 6;
 
 	// max weight 
-	int max_weight = 45;
+	int max_weight = 50;
 
 	// possible weights for each item (start list at index 1)
 	int item_weights[] = {0, 15, 25, 45, 30, 23, 37};
 
 	// possible values for each item (start list at index 1)
-	int item_values[] = {0, 100, 350, 225, 67, 275, 165};
+	int item_values[] = {0, 100, 350, 225, 67, 275, 168};
 
 	// 2d array to store results
-	int knapsack_values[7][46];
+	int knapsack_values[7][51];
 		
 	// go through all possible number of items
 	for (int num_items = 0; num_items <= max_items; num_items++) {
@@ -85,7 +85,7 @@ int main (int argc, char** argv) {
  * @param item_values the values of the items
  * @return the value with the current conditions
  **************************************************/
-int value (int num_items, int weight_limit, int (&knapsack_values)[7][46], int (&item_weights)[7], int (&item_values)[7]) {
+int value (int num_items, int weight_limit, int (&knapsack_values)[7][51], int (&item_weights)[7], int (&item_values)[7]) {
 	int leave;
 	int take; 
 
