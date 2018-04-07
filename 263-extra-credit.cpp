@@ -3,8 +3,38 @@
 #include <algorithm>
 #include <iomanip>
 
+/************************************************************
+ * Program to use dynamic programming to solve a
+ * specific knapsack problem. There are 6 items
+ * with weights {15, 25, 45, 30, 23, 37} and
+ * values 100, 350, 225, 67, 275, 165}. 
+ *
+ * @author Edric Lin
+ * @author Hai Duong
+ * @author Trungvuong Pham
+ * @author Santiago Quiroga
+ * @author Emilio Braun
+ ************************************************************/
+
+/**************************************************
+ * Method to calculate max value of a knapsack
+ * with the first n items and wieght limit.
+ * 
+ * @param num_items the item number to go up to
+ * @param weight_limit the current max weight allowed
+ * @param knapsack_values the stored knapsack values
+ * @param item_weights the weights of the items
+ * @param item_values the values of the items
+ * @return the value with the current conditions
+ **************************************************/
 int value (int num_items, int weight_limit, int (&knapsack_values)[7][46], int (&item_weights)[7], int (&item_values)[7]);
 
+/**************************************************
+ * Main method to run the program.
+ * 
+ * @param argc number of arguments
+ * @param argv arguments
+ **************************************************/
 int main (int argc, char** argv) {
 	
 	// max items to choose
@@ -44,6 +74,17 @@ int main (int argc, char** argv) {
 
 }
 
+/**************************************************
+ * Method to calculate max value of a knapsack
+ * with the first n items and wieght limit.
+ * 
+ * @param num_items the item number to go up to
+ * @param weight_limit the current max weight allowed
+ * @param knapsack_values the stored knapsack values
+ * @param item_weights the weights of the items
+ * @param item_values the values of the items
+ * @return the value with the current conditions
+ **************************************************/
 int value (int num_items, int weight_limit, int (&knapsack_values)[7][46], int (&item_weights)[7], int (&item_values)[7]) {
 	int leave;
 	int take; 
